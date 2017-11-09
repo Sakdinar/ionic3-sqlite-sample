@@ -9,13 +9,11 @@ export class SettingService {
     }
 
     get(key: string): Promise<Setting> {
-        return this.database
-            .getConnection()
-            .executeSql('TODO select setting query', [])
-            .then((data) => {
+        return this.database.getDatabase().then(db => {
+            return db.executeSql('TODO select setting query', []).then((data) => {
                 //TODO handle response
                 return { key: 'key 1', value: 'value 1' };
             });
+        });
     }
-
 }
