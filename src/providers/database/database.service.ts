@@ -18,7 +18,7 @@ export class DatabaseService {
         });
     }
 
-    getDatabase() {
+    getConnection() {
         return this.database;
     }
 
